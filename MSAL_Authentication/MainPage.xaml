@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="MSAL_Authentication.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MSAL_Authentication"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid  Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition x:Name="gridRow2" Height="7*"/>
+                <RowDefinition x:Name="gridRow3" Height="7*"/>
+                <RowDefinition Height=".5*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="MSAL Authentication" 
+                       Style="{ThemeResource SubheaderTextBlockStyle}" 
+                       Grid.Row="0" />
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Token" Style="{ThemeResource TitleTextBlockStyle}" />
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <TextBox x:Name="txtTokenRaw" TextWrapping="Wrap"
+                         Height="{Binding ElementName=gridRow2, Path=ActualHeight}"/>
+                </ScrollViewer>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="Graph API Response" Style="{ThemeResource TitleTextBlockStyle}" />
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <TextBox x:Name="txtAPIResponse" TextWrapping="Wrap"
+                     Height="{Binding ElementName=gridRow3, Path=ActualHeight}"
+                      Grid.Row="2"
+                     />
+                </ScrollViewer>
+            </StackPanel>
+            <TextBlock x:Name="txtStatus"
+                       Grid.Row="3"
+                       />
+        </Grid>
+    </Grid>
+</Page>
